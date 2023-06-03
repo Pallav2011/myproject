@@ -1,0 +1,40 @@
+      
+<!-- <div>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of apiData">
+                <td>{{u.userName}} </td>
+                <td>{{u.password}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<form #loginForm="ngForm">
+
+    <label for="email">Enter Email</label>
+    <input type="email" email ngModel name="email" #email="ngModel" required>
+    <small *ngIf="email.errors?.required">Mandatory email</small>
+    <small *ngIf="email.errors?.email">invalid email</small>
+    <br>
+    <label for="password">Enter PAssword</label>
+    <input type="password" ngModel name="password" #password="ngModel"><br><br>
+
+    <button (click)="saveData(loginForm)">Login</button>
+</form>
+
+<!-- <form [formGroup]="loginForm" >
+
+    <label for="email">Enter Email</label>
+    <input type="email" formControlName="email"><br>
+    <label for="password"> Enter Password</label>
+    <input type="password" formControlName="password">
+
+    <button type="submit" (click)="saveData()">Login</button>
+</form> -->

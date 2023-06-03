@@ -1,0 +1,41 @@
+
+<div class="divDesign">
+<h2>Login Form</h2>
+
+    <form [formGroup]="myLoginForm" >
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="">Enter User Name: </label>
+                    </td>
+                    <td>
+                        <input type="text" formControlName="username" title="Enter user name">
+                    </td>
+                     
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Enter Password: </label>
+                    </td>
+                    <td>
+                        <input type="password" formControlName="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" class="btn btn-outline-success" (click)="login()">Login</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-outline-danger">Cancel</button>
+                    </td>
+                   
+                </tr>
+            </tbody>
+        </table>
+        
+    </form>
+</div>
+
+
+<!-- <app-userdetails [users]="inpuData"></app-userdetails> -->

@@ -1,0 +1,51 @@
+
+<div class="divDesign">
+    <h2>Add User</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter user name here" style="margin-right: 50px;" #uName>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="addUser(uName)">Add User</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-danger" (click)="removeUser(uName)">Remove User</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+ 
+    <table class="table">
+        <thead>
+            <tr style="color: green;">
+                <th>User Name List</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList" style="color: red;">
+                <td>{{user}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="divDesign">
+    <h2>User Details</h2>
+    <table class="table">
+        <thead>
+            <tr style="color: green;">
+                <th>User Name</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users" style="color: red;">
+                <td>{{u.userName}}</td>
+                <td>{{u.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

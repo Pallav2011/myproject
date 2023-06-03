@@ -1,0 +1,13 @@
+.divDesign{
+    border: solid 1px gray;
+    margin: 20px 400px 20px 400px;
+    padding: 20px;
+}
+
+/* .flexbox-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px gray;
+} */
