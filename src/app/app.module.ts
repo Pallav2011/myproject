@@ -18,6 +18,9 @@ import { Comp4Component } from './comp4/comp4.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FirebasedataComponent } from './firebasedata/firebasedata.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { InitialsPipePipe } from './initials-pipe.pipe';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     Comp3Component,
     Comp4Component,
     FirebasedataComponent,
+    ParentComponent,
+    ChildComponent,
+    InitialsPipePipe,
 
   ],
   imports: [

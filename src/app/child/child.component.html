@@ -1,0 +1,26 @@
+<p>child works!</p>
+{{'Angular uppercase pipes' | uppercase}} <br>
+{{'Angular LOWERCASE pipes' | lowercase}} <br>
+{{ date | date}}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STUD ID</th>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <!-- <th>DOB</th> -->
+            <th>FEE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stud of studentDetails">
+            <td>{{stud.id | uppercase}}</td>
+            <td>{{stud.name | titlecase | initialsPipe:stud.gender}}</td>
+            <td>{{stud.gender | lowercase}}</td>
+            <!-- <td>{{stud.dob | date:"short"}}</td> -->
+            <td>{{stud.fee | currency:'INR':true}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,5 @@
+<p>parent works!</p>
+Name : {{myData.name}} <br>
+Age : {{myData.age}} <br>
+Adress : {{myData.adress}}
+<app-child [child]="parentData" (outputChild)="saveData($event)"></app-child>
