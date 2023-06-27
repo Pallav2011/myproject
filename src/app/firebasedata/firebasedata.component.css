@@ -1,4 +1,4 @@
-.divDesign{
+/* .divDesign{
     text-align: center;
     border: 1px solid;
 }
@@ -15,15 +15,15 @@
     position: relative;
     background-color: red;
     z-index: 60px;
-    /* display: none; */
-    /* display none means it can hide the element as well as its space; */
+    display: none;
+    display none means it can hide the element as well as its space;
 }
 #box2{
     position: relative;
     background-color: blue;
     z-index: -20px;
-    /* visibility: hidden; */
-    /* visibility hidden means it hide the element but reserve its space or show its space; */
+    visibility: hidden;
+    visibility hidden means it hide the element but reserve its space or show its space;
 }
 #box3{
     background-color: yellow;
@@ -33,4 +33,18 @@
 }
 #box5{
     background-color: brown;
+} */
+
+.container{
+    border: solid 1px white;
+    padding: 30px;
+    display: flex;
+}
+
+.childs{
+    width: 50%;
+}
+
+.table{
+    color: aqua;
 }

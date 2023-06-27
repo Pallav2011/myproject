@@ -16,7 +16,7 @@
     </table>
 </div> -->
 
-<form #loginForm="ngForm">
+<!-- <form #loginForm="ngForm">
 
     <label for="email">Enter Email</label>
     <input type="email" ngModel name="email" #email="ngModel" email required>
@@ -27,7 +27,7 @@
     <input type="password" ngModel name="password" #password="ngModel"><br><br>
 
     <button (click)="saveData(loginForm)">Login</button>
-</form>
+</form> -->
 
 <!-- <form [formGroup]="loginForm" >
 
@@ -39,8 +39,55 @@
     <button type="submit" (click)="saveData()">Login</button>
 </form> -->
 
-<div class="box" id="box1"></div>
+<!-- <div class="box" id="box1"></div>
 <div class="box" id="box2"></div>
 <div class="box" id="box3"></div>
 <div class="box" id="box4"></div>
-<div class="box" id="box5"></div>
+<div class="box" id="box5"></div> -->
+
+<div class="container">
+
+    <div class="childs">
+  <form #productForm="ngForm">
+        <label for="productId">Enter Product Id: </label>
+        <input type="text" placeholder="Product Id" required name="productId" #productId="ngModel" ngModel>
+        <small class="text-danger" *ngIf="productId.errors?.required && productId.touched">Product id is Mandatory</small> <br><br>
+
+        <label for="productName">Enter Product Name: </label>
+        <input type="text" placeholder="Product Name" required name="productName" #productName="ngModel" ngModel>
+        <small class="text-danger" *ngIf="productName.errors?.required && productName.touched">Product Name is Mandatory</small> <br><br>
+
+        <label for="productPrice">Enter Product Price: </label>
+        <input type="text" placeholder="Product Price" required name="productPrice" #productPrice="ngModel" ngModel>
+        <small class="text-danger" *ngIf="productPrice.errors?.required && productPrice.touched">Product price is Mandatory</small> <br><br>
+
+        <button [disabled]="!productForm.valid" class="btn btn-primary" (click)="addProduct(productId,productName,productPrice)">Add Product</button>
+    </form>
+    </div>
+
+    <div *ngIf="productArray != null" class="childs">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productArray">
+                    <td>{{product.productId}}</td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productPrice | currency:'INR'}}</td>
+                    <td>
+                        <button type="button" >Update</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" style="background-color: red; color: white;" (click)="deleteProduct(product.productId)" >Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

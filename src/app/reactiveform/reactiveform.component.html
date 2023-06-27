@@ -1,0 +1,15 @@
+
+<div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+        <label for="userName">Enter User Name: </label>
+        <input type="text" formControlName="userName">
+        <small class="text-danger" *ngIf="myForm.get('userName').touched && !myForm.get('userName').valid">User Name is Mandatory</small> <br><br>
+
+        <label for="email">Enter Email: </label>
+        <input type="email" formControlName="email">
+        <small class="text-danger" *ngIf="myForm.get('email').touched && !myForm.get('email').valid">Email is mandatory or invalid</small> <br> <br>
+
+        <button type="submit">Show</button>
+    </form>
+</div>

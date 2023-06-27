@@ -24,12 +24,12 @@ export class Comp1Component implements OnInit {
     this.subjectservice.userNameSub.next(uname.value);
   }
 
-  getData(){
-    this.apiserv.getApiData().subscribe(res=>{
-      this.APIdata=res;
-      console.log(this.APIdata);  
-    })
-  }
+  // getData(){
+  //   this.apiserv.getApiData().subscribe(res=>{
+  //     this.APIdata=res;
+  //     console.log(this.APIdata);  
+  //   })
+  // }
 
   // myData={
   //   name:'pandurang'

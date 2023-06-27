@@ -6,14 +6,20 @@ import { Injectable } from '@angular/core';
 })
 export class FirebaseService {
 
-  url='https://angularproject-21a59-default-rtdb.firebaseio.com/';
+  url='https://myproject-2c8ca-default-rtdb.firebaseio.com/';
   constructor(private httpclient:HttpClient) { }
 
+  arr=[];
   sendData(data){
-    return this.httpclient.put(this.url+'/data.json',data);
+    this.arr.push(data);
+    return this.httpclient.put(this.url+'/products.json',this.arr);
   }
 
   getData(){
-    return this.httpclient.get(this.url+'/data.json');
+    return this.httpclient.get(this.url+'/products.json');
+  }
+
+  deleteData(pId){
+    return this.httpclient.delete(this.url+`${pId}`);
   }
 }

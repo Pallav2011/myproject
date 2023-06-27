@@ -3,3 +3,22 @@ Name : {{myData.name}} <br>
 Age : {{myData.age}} <br>
 Adress : {{myData.adress}}
 <app-child [child]="parentData" (outputChild)="saveData($event)"></app-child>
+
+<button (click)="getData('1')">data1</button><br><br>
+<div *ngIf="stud1">
+  ID:  {{studData.id}} <br>
+  Name : {{studData.name}} <br>
+  Adress : {{studData.adress}}
+</div>    
+<button (click)="getData('2')">data2</button><br><br>
+<div *ngIf="stud2">
+    ID:  {{studData.id}} <br>
+    Name : {{studData.name}} <br>
+    Adress : {{studData.adress}}
+</div> 
+<button (click)="getData('3')">data3</button><br><br>
+<div *ngIf="stud3">
+    ID:  {{studData.id}} <br>
+    Name : {{studData.name}} <br>
+    Adress : {{studData.adress}}
+</div> 

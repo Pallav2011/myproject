@@ -7,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class SubjectService {
 
   // userNameSub = new Subject<any>();
-  userNameSub=new BehaviorSubject<any>({'':''});
+  userNameSub=new BehaviorSubject<any>({});
   constructor() { }
 
   // usersData(user){

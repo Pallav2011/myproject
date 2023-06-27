@@ -11,6 +11,9 @@ import { AuthGuard } from './auth.guard';
 import { FirebasedataComponent } from './firebasedata/firebasedata.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 const routes: Routes=[
   { path:'', redirectTo:'home',pathMatch:'full' },
@@ -20,10 +23,12 @@ const routes: Routes=[
   { path:'comp3',component:Comp3Component },
   { path:'comp4',component:Comp4Component },
   { path:'login',component:LoginComponent },
-  { path:'users',component:UserdetailsComponent },
-  { path:'firebase',component:FirebasedataComponent },
+  { path:'users',component:UserdetailsComponent, canActivate:[AuthGuard] },
+  { path:'firebase',component:FirebasedataComponent},
   { path:'parent', component:ParentComponent},
-  { path:'child', component:ChildComponent}
+  { path:'child', component:ChildComponent},
+  { path:'reactive', component:ReactiveformComponent, canDeactivate:[UnsavedchangesGuard] },
+  {  path:'**',component:PagenotfoundComponent}
 ];
 
 @NgModule({

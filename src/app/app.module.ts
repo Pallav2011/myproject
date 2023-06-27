@@ -21,6 +21,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { InitialsPipePipe } from './initials-pipe.pipe';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -37,6 +41,8 @@ import { InitialsPipePipe } from './initials-pipe.pipe';
     ParentComponent,
     ChildComponent,
     InitialsPipePipe,
+    PagenotfoundComponent,
+    ReactiveformComponent,
 
   ],
   imports: [
@@ -49,7 +55,7 @@ import { InitialsPipePipe } from './initials-pipe.pipe';
     MatTabsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UnsavedchangesGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SubjectService } from '../services/subject.service';
 import { FirebaseService } from '../services/firebase.service';
+import { AuthenticateService } from '../services/authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
   ]
    
-  constructor( private router:Router, private subservice:SubjectService,private firbaseserv:FirebaseService) { 
+  constructor( private router:Router, private subservice:SubjectService,private firbaseserv:FirebaseService, private validity:AuthenticateService) { 
     this.createFormControl();
   }
 
@@ -61,6 +62,7 @@ export class LoginComponent implements OnInit {
         // this.formisValid=true;
         // this.inpuData=element;
         this.subservice.userNameSub.next(element);
+        this.validity.checkUserValidity(true);
         this.firbaseserv.sendData(element).subscribe(res=>{
           // console.log('responce:',res);  
         })

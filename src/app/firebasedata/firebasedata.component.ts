@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-firebasedata',
@@ -9,30 +9,37 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class FirebasedataComponent implements OnInit {
 
-  loginForm:FormGroup;
-  apiData:any[]=[];
+  productArray;
+
   constructor(private firebaseserv:FirebaseService) { 
-    this.controls();
   }
 
   ngOnInit() {
+    this.getAPIdata();
+  }
+
+  getAPIdata(){
     this.firebaseserv.getData().subscribe(res=>{
-      this.apiData.push(res) ;
-      console.log(this.apiData);
-      
+    this.productArray = res;
+  })
+  }
+
+  addProduct(pId,pName,pPrice){
+    let objProduct={ 
+      productId:pId.value,
+      productName:pName.value,
+      productPrice:pPrice.value
+    }
+    this.firebaseserv.sendData(objProduct).subscribe(res=>{
+      this.getAPIdata();
     })
   }
 
-  saveData(data){
-    console.log(data.value.email);
-    console.log(data.value.password); 
+  deleteProduct(id){
+
+    this.firebaseserv.deleteData(id).subscribe(res=>{
+    console.log(res);
+      
+    })
   }
-
- controls(){
-this.loginForm = new FormGroup({
-  'email' : new FormControl(null),
-  'password' : new FormControl(null)
-})
- }
-
 }
