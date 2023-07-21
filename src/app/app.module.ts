@@ -24,7 +24,7 @@ import { InitialsPipePipe } from './initials-pipe.pipe';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UnsavedchangesGuard } from './unsavedchanges.guard';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
-import { AuthGuard } from './auth.guard';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -43,6 +43,7 @@ import { AuthGuard } from './auth.guard';
     InitialsPipePipe,
     PagenotfoundComponent,
     ReactiveformComponent,
+    DemoComponent,
 
   ],
   imports: [
@@ -55,7 +56,7 @@ import { AuthGuard } from './auth.guard';
     MatTabsModule,
     FormsModule
   ],
-  providers: [UnsavedchangesGuard,AuthGuard],
+  providers: [UnsavedchangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
